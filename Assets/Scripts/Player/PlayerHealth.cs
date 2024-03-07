@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private PlayerStats stats;
 
     private PlayerAnimations palyerAnimations;
+    public bool PlayerHasHealth;
 
     private void Awake()
     {
@@ -16,19 +17,21 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (stats.Health <=0f)
         {
-            TakeDamage(1f);
+            PlayerDead();
         }
     }
 
     public void TakeDamage(float amount)
     {
+        if (stats.Health <= 0f) return;
         stats.Health -= amount;
-
+        DamageManager.Instance.ShowDamageText(amount, this.transform);
         if (stats.Health <= 0)
         {
             PlayerDead();
+            stats.Health = 0f;
         }
     }
 
