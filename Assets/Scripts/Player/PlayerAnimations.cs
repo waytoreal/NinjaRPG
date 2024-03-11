@@ -11,6 +11,8 @@ public class PlayerAnimations : MonoBehaviour
     private readonly int dead = Animator.StringToHash("Dead");
     private readonly int revive = Animator.StringToHash("Revive");
 
+    private readonly int attacking = Animator.StringToHash("Attacking"); // 애니메이터 아이디를 반환함.
+
     private Animator animator;
 
     private void Awake()
@@ -32,6 +34,11 @@ public class PlayerAnimations : MonoBehaviour
     {
         animator.SetFloat(moveX, dir.x);
         animator.SetFloat(moveY, dir.y);
+    }
+
+    public void SetAttackAnimation(bool value)
+    {
+        animator.SetBool(attacking, value);
     }
 
     public void ResetPlayer()
