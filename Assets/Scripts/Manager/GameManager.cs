@@ -1,16 +1,12 @@
 using System;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public static GameManager Instance;
-
+    
     [SerializeField] private Player player;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    public Player Player => player;
 
     private void Update()
     {

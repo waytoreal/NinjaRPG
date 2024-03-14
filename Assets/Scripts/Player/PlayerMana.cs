@@ -30,6 +30,20 @@ public class PlayerMana : MonoBehaviour
         
     }
 
+    public void RecoverMana(float amount)
+    {
+        stats.Mana += amount;
+        if (stats.Mana > stats.MaxMana)
+        {
+            stats.Mana = stats.MaxMana;
+        }
+    }
+
+    public bool CanRecoverMana()
+    {
+        return stats.Mana > 0f && stats.Mana < stats.MaxMana;
+    }
+
     public void ResetMana()
     {
         CurrentMana = stats.MaxMana;
