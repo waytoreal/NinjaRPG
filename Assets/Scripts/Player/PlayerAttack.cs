@@ -37,7 +37,9 @@ public class PlayerAttack : MonoBehaviour
     {
         actions.Attack.ClickAttack.performed += ctx => Attack();
 
-        EquipWeapon(initialWeapon);
+        //EquipWeapon(initialWeapon);
+
+        WeaponManager.Instance.EquipWeapon(initialWeapon);
     }
 
     private void Update()

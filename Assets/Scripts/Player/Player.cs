@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public PlayerMana PlayerMana { get; private set; }
     public PlayerHealth PlayerHealth { get; private set; }
 
+    public PlayerAttack PlayerAttack { get; private set; }
+
     PlayerAnimations animations;
 
     private void Awake()
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
         animations = GetComponent<PlayerAnimations>();
         PlayerMana = GetComponent<PlayerMana>();
         PlayerHealth = GetComponent<PlayerHealth>();
+        PlayerAttack = GetComponent<PlayerAttack>();
     }
 
     private void Update()
