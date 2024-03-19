@@ -29993,6 +29993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffdebbaa8550ee4384249a579ad179d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameContent: {fileID: 11400000, guid: fa7ae9e4d41d58d4a99c781854fc987f, type: 2}
   inventorySize: 24
   inventoryItems: []
   testItem: {fileID: 11400000, guid: 8a15b80cbfbc5394d9bae71c6f788f3d, type: 2}
