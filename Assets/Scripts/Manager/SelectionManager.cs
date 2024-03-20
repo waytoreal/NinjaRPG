@@ -36,9 +36,17 @@ public class SelectionManager : MonoBehaviour
                 if (enemy == null) return;
                 EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
 
-                if (enemyHealth.CurrentHealth <= 0f) return;
+                if (enemyHealth.CurrentHealth <= 0f)
+                {
+                    EnemyLoot enemyLoot = enemy.GetComponent<EnemyLoot>();
+                    LootManager.Instance.ShowLoot(enemyLoot);
+                }
+                else
+                {
+                    OnEnemySelectedEvent?.Invoke(enemy);
+                }              
 
-                OnEnemySelectedEvent?.Invoke(enemy);
+                
             }
             else
             {

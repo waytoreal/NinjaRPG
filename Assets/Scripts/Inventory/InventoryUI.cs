@@ -25,11 +25,6 @@ public class InventoryUI : Singleton<InventoryUI>
     protected override void Awake()
     {
         base.Awake();
-        
-    }
-
-    private void Start()
-    {
         InitInventory();
     }
 

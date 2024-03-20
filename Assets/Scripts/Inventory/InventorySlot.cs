@@ -14,7 +14,7 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] private Image quantityContainer;
     [SerializeField] private TextMeshProUGUI itemQuantityTMP;
 
-    public int Index { get; set; }
+    public int Index;
 
     public void ClickSlot()
     {
