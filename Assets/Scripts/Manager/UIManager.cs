@@ -34,6 +34,10 @@ public class UIManager : MonoBehaviour
     [SerializeField ]private TextMeshProUGUI dexterityTMP;
     [SerializeField ]private TextMeshProUGUI intelligenceTMP;
 
+    [Header("Extra Panels")]
+    [SerializeField] private GameObject npcQuestPanel;
+    [SerializeField] private GameObject playerQuestPanel;
+
     private void Update()
     {
         UpdatePlayerUI();
@@ -81,13 +85,37 @@ public class UIManager : MonoBehaviour
         UpdateStatsPanel();
     }
 
+    public void OpenCloseNPCQuestPanel(bool value)
+    {
+        npcQuestPanel.SetActive(value);
+    }
+
+    public void OpenClosePlayerQuestPanel(bool value)
+    {
+        playerQuestPanel.SetActive(value);
+    }
+
+    private void ExtraInteractionCallback(InteractionType type)
+    {
+        switch (type)
+        {
+            case InteractionType.Quest:
+                OpenCloseNPCQuestPanel(true);
+                break;
+            case InteractionType.Shop:
+                break;
+        }
+    }
+
     private void OnEnable()
     {
         PlayerUpgrade.OnPlayerUpgradeEvent += UpgradeCallback;
+        DialogueManager.OnExtraInteractionEvent += ExtraInteractionCallback;
     }
 
     private void OnDisable()
     {
         PlayerUpgrade.OnPlayerUpgradeEvent -= UpgradeCallback;
+        DialogueManager.OnExtraInteractionEvent -= ExtraInteractionCallback;
     }
 }

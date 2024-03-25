@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f126b8f9b1472a641b9346479422e61f, type: 3}
+  m_Name: Quest_Kill_10_Enemies
+  m_EditorClassIdentifier: 
+  Name: Enemy Master
+  ID: Kill10Enemy
+  QuestGoal: 10
+  Description: Track down and defeat 10 enemies.
+  GoldReward: 100
+  ExpReward: 100
+  ItemReward:
+    Item: {fileID: 11400000, guid: a2af1c1df090f9e44b8c0625bbb1e168, type: 2}
+    Quantity: 1
+  CurrentStatus: 0
+  QuestCompleted: 0
+  QuestAccepted: 0

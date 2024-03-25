@@ -37,6 +37,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (CurrentHealth <= 0)
         {
             DisableEnemy();
+            QuestManager.Instance.AddProgress("Kill2Enemy", 1);
+            QuestManager.Instance.AddProgress("Kill5Enemy", 1);
+            QuestManager.Instance.AddProgress("Kill10Enemy", 1);
         }
         else
         {
