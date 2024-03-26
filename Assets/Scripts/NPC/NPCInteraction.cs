@@ -14,7 +14,6 @@ public class NPCInteraction : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("¡¢√À");
             DialogueManager.Instance.NPCSeleted = this;
             interactionBox.SetActive(true);
         }

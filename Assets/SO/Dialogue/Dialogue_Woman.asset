@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Woman
   Icon: {fileID: 21300000, guid: 46156f9550eb80f4f85a98b0e1570835, type: 3}
-  HasInteraction: 0
-  InteractionType: 0
-  Greeting: Hi Kim
+  HasInteraction: 1
+  InteractionType: 1
+  Greeting: Hey there welcome to the shop
   Dialogue:
-  - I'm HoHo Azuma
-  - How are you today?
+  - Need anything special or just browsing around?
